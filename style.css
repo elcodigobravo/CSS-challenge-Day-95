@@ -1,0 +1,127 @@
+body{
+    height: 100vh;
+    display: grid;
+    place-items: center;
+}
+
+.container{
+    position: relative;
+    width: 400px;
+    height: 400px;
+    background-color: #ffdcb5;
+}
+
+.pig{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.head{
+    position: relative;
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    background-color: #f7949a;
+}
+
+.ear{
+    box-sizing: border-box;
+    position: absolute;
+    z-index: -1;
+    width: 60px;
+    height: 60px;
+    top:-5px;
+    background-color: #ffb7bc;
+    border: 7px solid #f7949a;
+}
+
+
+.ear-l{
+    border-radius: 15px 0 0 0;
+    left: 10px;
+    transform: rotate(-12deg) skewY(27deg);
+}
+
+.ear-r{
+    border-radius: 0 15px 0 0;
+    right: 10px;
+    transform: rotate(12deg) skewY(-27deg);
+}
+
+.eye{
+    position: absolute;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    top: 42%;
+    background-color: white;
+    animation: eyes 15s ease-in-out infinite;
+}
+
+.eye::before{
+    position: absolute;
+    content: "";
+    display: block;
+    width: 4px;
+    height: 4px;
+    background-color: #333;
+    border-radius: 50%;
+    top: 9px;
+    left: 9px;
+    animation: pupills 15s ease-in-out infinite;
+}
+
+.eye-l{
+    left: 24%;
+}
+
+.eye-r{
+    right: 24%;
+}
+
+.nose{
+    position: absolute;
+    height: 50px;
+    width: 60px;
+    top: 55%;
+    left: 50px;
+    background-color: #ffb7bc;
+    border-radius: 100px/80px;
+}
+
+.nostril{
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    top: 15px;
+    background-color: #ce666d;
+    border-radius: 50%;
+}
+
+.nostril-l{
+    left: 14px;
+}
+
+.nostril-r{
+    right: 14px;
+}
+
+@keyframes eyes{
+    0%,23%,25%,65%,67%,89%,91%,100%{
+        transform: scaleY(1);
+    }
+    24%,66%,90% {
+        transform: scaleY(0);
+    }
+}
+
+@keyframes pupills{
+    0%,23%,25%,65%,67%,89%,91%,100%{
+        transform: scaleY(1);
+    }
+    24%,66%,90% {
+        transform: scaleY(2);
+    }
+}
